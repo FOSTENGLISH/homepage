@@ -55,7 +55,9 @@
         /* 공통 박스 스타일 (링크, 버튼 모두 동일 적용) */
         .link-box, 
         .link-box.link-button {
-            display: block; 
+            display: flex; /* flexbox 사용 */
+            align-items: center; /* 수직 중앙 정렬 */
+            justify-content: center; /* 수평 중앙 정렬 (내용이 텍스트만 있을 때) */
             width: 100%;
             text-decoration: none; 
             color: #333;
@@ -69,6 +71,7 @@
             text-align: center;
             cursor: pointer;
             box-sizing: border-box;
+            min-height: 55px; /* 모든 버튼 최소 높이 통일 (조절 가능) */
         }
 
         .link-box:hover {
@@ -77,52 +80,39 @@
         }
 
         /* 모든 박스 제목 스타일 통일 */
-        .link-box .link-title,
-        .link-box.link-button .link-title {
+        .link-box .link-title {
             margin: 0;
             font-size: 1.2em;
             font-weight: 600;
             color: #004d99;
-            text-decoration: none; /* 밑줄 제거 */
+            text-decoration: none;
         }
-
-        /* 원장 소개 전용 스타일 */
+        
+        /* '원장 소개' 전용 스타일 */
         .owner-intro-content {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%; /* 부모 박스 크기만큼 확장 */
             gap: 15px;
         }
 
         .owner-photo {
-            width: 60px;
-            height: 60px;
+            width: 35px; /* 이미지 크기 축소 */
+            height: 35px; /* 이미지 크기 축소 */
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #004d99;
         }
 
-        /* 푸터 */
-        .footer {
-            text-align: center;
-            padding: 20px 20px;
-            margin-top: 40px;
-            border-top: 1px solid #ddd;
-            font-size: 0.9em;
-            color: #666;
-            background-color: white;
+        /* 기타 SNS 박스 (버튼 태그)의 텍스트를 A 태그의 텍스트와 동일하게 처리 */
+        .link-box.link-button .link-title {
+            line-height: 1; /* 높이 맞춤 보정 */
         }
 
-        .footer p {
-            margin: 5px 0;
-        }
-
-        .footer a {
-            color: #004d99;
-            text-decoration: none;
-        }
-
-        /* 모달 스타일 */
+        /* 푸터 (요청에 따라 삭제) */
+        
+        /* 모달 스타일 (변경 없음) */
         .modal {
             display: none; 
             position: fixed;
@@ -195,7 +185,6 @@
     </header>
 
     <main class="container">
-        <!-- 원장 소개 -->
         <a href="https://fostenglish.github.io/resume/" target="_blank" class="link-box">
             <div class="owner-intro-content">
                 <img src="원장.PNG" alt="Anna 원장 사진" class="owner-photo">
@@ -203,28 +192,23 @@
             </div>
         </a>
         
-        <!-- 학부모님 필수 숙지 사항들 -->
         <a href="https://fostenglish.github.io/newcomer/" target="_blank" class="link-box">
             <h2 class="link-title">학부모님 필수 숙지 사항들</h2>
         </a>
 
-        <!-- 학원 프로그램 안내 -->
         <a href="https://fostenglish.github.io/web/" target="_blank" class="link-box">
             <h2 class="link-title">학원 프로그램 안내</h2>
         </a>
 
-        <!-- 학원 SNS 안내 -->
         <a href="https://talk.naver.com/profile/c/fostenglish" target="_blank" class="link-box">
             <h2 class="link-title">학원 SNS 안내</h2>
         </a>
 
-        <!-- 기타 SNS 안내 -->
         <button id="openModalBtn" class="link-box link-button">
             <h2 class="link-title">기타 SNS 안내</h2>
         </button>
     </main>
 
-    <!-- 기타 SNS 모달 -->
     <div id="snsModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -259,6 +243,5 @@
     </script>
 </body>
 </html>
-
 
 
