@@ -29,7 +29,16 @@
             margin: 0;
             font-size: 1.8em;
             font-weight: 700;
+            /* 요청 1: (FOST English)가 같은 줄에 보이도록 수정 */
+            white-space: nowrap; 
         }
+        
+        /* 요청 1: (FOST English)를 한 줄로 표시하기 위해 h1 내부 span 추가 */
+        .header h1 span {
+            font-size: 0.8em; /* 영어 부분은 약간 작게 */
+            font-weight: 500;
+        }
+
 
         .slogan {
             margin-top: 5px;
@@ -68,16 +77,29 @@
 
         .link-title {
             margin: 0;
-            font-size: 1.2em;
+            font-size: 1.2em; /* 모든 링크 박스 제목 크기 통일 */
             font-weight: 600;
             color: #004d99; /* 파란색 제목 */
         }
+        
+        /* 요청 2: 원장 소개 글자 밑줄 제거 */
+        .owner-intro-content a.link-title {
+            text-decoration: none;
+        }
 
-        /* 버튼 스타일 (기타 SNS 안내) */
+        /* 버튼 스타일 (기타 SNS 안내) - 폰트 크기 통일 위해 조정 */
         .link-button {
             width: 100%;
             border: none;
             cursor: pointer;
+            /* 요청 3: 기타 SNS 안내 글자 크기를 다른 박스와 동일하게 */
+            padding: 15px 20px; 
+            box-sizing: border-box; 
+        }
+        
+        .link-button .link-title {
+            /* 기타 SNS 안내의 h2 폰트 크기 유지 */
+            font-size: 1.2em; 
         }
 
         /* 원장 소개 박스 전용 스타일 */
@@ -97,7 +119,7 @@
         }
 
         .owner-intro-content .link-title {
-            font-size: 1.4em; /* 원장 소개 글자는 더 크게 */
+            font-size: 1.2em; /* 원장 소개 글자는 이제 다른 링크와 동일하게 */
         }
 
         /* 푸터 스타일 */
@@ -122,7 +144,7 @@
 
         /* 모달 (팝업) 스타일 */
         .modal {
-            display: none; /* 기본 숨김 */
+            display: none; 
             position: fixed;
             z-index: 10;
             left: 0;
@@ -130,12 +152,12 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4); /* 배경 어둡게 */
+            background-color: rgba(0,0,0,0.4); 
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto; /* 상하 가운데 */
+            margin: 15% auto; 
             padding: 20px;
             border-radius: 10px;
             width: 80%;
@@ -185,7 +207,7 @@
 <body>
 
     <header class="header">
-        <h1>포스트잉글리쉬 (FOST English)</h1>
+        <h1>포스트잉글리쉬 <span style="font-size: 0.8em; font-weight: 500;">(FOST English)</span></h1>
         <p class="slogan">AI를 활용한 창의적 미래 인재 양성</p>
     </header>
 
@@ -222,7 +244,7 @@
     <div id="snsModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h3 class="modal-title">기타 SNS 채널</h3>
+            <h3 class="modal-title">기타 SNS 채널 </h3>
             <div class="sns-list">
                 <a href="https://clip.naver.com/@newstalkcreator" target="_blank" class="sns-item">네이버 클립</a>
                 <a href="https://tv.naver.com/annasjy" target="_blank" class="sns-item">네이버 TV</a>
