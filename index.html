@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포스트잉글리쉬 FOST English - AI 활용 창의적 미래 인재 양성</title>
+    
+    <style>
+        /* 기본 스타일 초기화 */
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* 배경색: 밝은 회색 */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 헤더 스타일 */
+        .header {
+            background-color: #004d99; /* 진한 파란색 */
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .slogan {
+            margin-top: 5px;
+            font-size: 1em;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* 메인 콘텐츠 (링크 박스) 컨테이너 */
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* 링크 박스 공통 스타일 */
+        .link-box {
+            display: block; /* 블록 요소로 전체 영역 클릭 가능하게 */
+            text-decoration: none; /* 링크 밑줄 제거 */
+            color: #333;
+            background-color: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .link-box:hover {
+            transform: translateY(-3px); /* 마우스 오버 시 살짝 떠오르는 효과 */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-title {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #004d99; /* 파란색 제목 */
+        }
+
+        /* 버튼 스타일 (기타 SNS 안내) */
+        .link-button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* 원장 소개 박스 전용 스타일 */
+        .owner-intro-content {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* 가운데 정렬 */
+            gap: 20px;
+        }
+
+        .owner-photo {
+            width: 60px; /* 사진 크기 */
+            height: 60px;
+            border-radius: 50%; /* 원형 이미지 */
+            object-fit: cover;
+            border: 2px solid #004d99;
+        }
+
+        .owner-intro-content .link-title {
+            font-size: 1.4em; /* 원장 소개 글자는 더 크게 */
+        }
+
+        /* 푸터 스타일 */
+        .footer {
+            text-align: center;
+            padding: 20px 20px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+            background-color: white;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .footer a {
+            color: #004d99;
+            text-decoration: none;
+        }
+
+        /* 모달 (팝업) 스타일 */
+        .modal {
+            display: none; /* 기본 숨김 */
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* 배경 어둡게 */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 상하 가운데 */
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .modal-title {
+            text-align: center;
+            color: #004d99;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .sns-list a {
+            display: block;
+            padding: 10px;
+            margin-bottom: 8px;
+            background-color: #e9f0f7;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s;
+        }
+
+        .sns-list a:hover {
+            background-color: #d0e0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>포스트잉글리쉬 (FOST English)</h1>
+        <p class="slogan">AI를 활용한 창의적 미래 인재 양성</p>
+    </header>
+
+    <main class="container">
+        <div class="link-box">
+            <div class="owner-intro-content">
+                <img src="원장.png" alt="Anna 원장 사진" class="owner-photo">
+                <a href="https://fostenglish.github.io/resume/" target="_blank" class="link-title">원장 소개</a>
+            </div>
+        </div>
+        
+        <a href="https://fostenglish.github.io/newcomer/" target="_blank" class="link-box">
+            <h2 class="link-title">신규학부모님 안내사항</h2>
+        </a>
+
+        <a href="https://fostenglish.github.io/web/" target="_blank" class="link-box">
+            <h2 class="link-title">학원 프로그램 안내</h2>
+        </a>
+
+        <a href="https://talk.naver.com/profile/c/fostenglish" target="_blank" class="link-box">
+            <h2 class="link-title">학원 SNS 안내</h2>
+        </a>
+
+        <button id="openModalBtn" class="link-box link-button">
+            <h2 class="link-title">기타 SNS 안내</h2>
+        </button>
+    </main>
+
+    <footer class="footer">
+        <p>📍 잠실 장미B상가 4층 405호 | 📞 420-7870</p>
+        <p>블로그: <a href="http://blog.naver.com/annasjy" target="_blank">blog.naver.com/annasjy</a></p>
+    </footer>
+
+    <div id="snsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 class="modal-title">기타 SNS 채널 (총 7개)</h3>
+            <div class="sns-list">
+                <a href="https://m.place.naver.com/place/1148937072/home?entry=pll" target="_blank" class="sns-item">네이버 플레이스</a>
+                <a href="https://www.gangmom.kr/ceo/institutes" target="_blank" class="sns-item">강남엄마</a>
+                <a href="https://clip.naver.com/@newstalkcreator" target="_blank" class="sns-item">네이버 클립</a>
+                <a href="https://tv.naver.com/annasjy" target="_blank" class="sns-item">네이버 TV</a>
+                <a href="https://tv.kakao.com/channel/10108285/video" target="_blank" class="sns-item">카카오 TV</a>
+                <a href="https://www.facebook.com/fostenglish?locale=ko_KR" target="_blank" class="sns-item">페이스북</a>
+                <a href="https://www.notion.so/feca2ebfc3604d72883d67c3491475a7" target="_blank" class="sns-item">노션</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const modal = document.getElementById('snsModal');
+        const btn = document.getElementById('openModalBtn');
+        const span = document.getElementsByClassName('close-btn')[0];
+
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+    </script>
+</body>
+</html>
