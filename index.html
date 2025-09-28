@@ -53,16 +53,17 @@
         }
 
         /* 공통 박스 스타일 (링크, 버튼 모두 동일 적용) */
-        .link-box, 
-        .link-box.link-button {
-            display: flex; /* flexbox 사용 */
-            align-items: center; /* 수직 중앙 정렬 */
-            justify-content: center; /* 수평 중앙 정렬 (내용이 텍스트만 있을 때) */
+        /* display: flex, justify-content: center, align-items: center로 중앙 정렬 유지 */
+        .link-box {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
             width: 100%;
             text-decoration: none; 
             color: #333;
             background-color: white;
-            padding: 15px 20px;
+            /* 높이를 통일하기 위해 패딩을 강제로 18px로 지정 */
+            padding: 18px 20px; 
             margin-bottom: 15px;
             border-radius: 12px;
             border: 1px solid #ddd;
@@ -71,7 +72,18 @@
             text-align: center;
             cursor: pointer;
             box-sizing: border-box;
-            min-height: 55px; /* 모든 버튼 최소 높이 통일 (조절 가능) */
+            /* Button 태그가 아닌 A 태그로 통일되면서 min-height 불필요 */
+        }
+
+        /* 기타 SNS 안내 (A 태그로 변경)에도 동일한 스타일 적용 */
+        #openModalBtn {
+             /* A 태그를 Button처럼 사용할 때 추가 스타일 */
+            -webkit-appearance: none; /* iOS Safari 버튼 스타일 제거 */
+            -moz-appearance: none; /* Firefox 버튼 스타일 제거 */
+            appearance: none; /* 기본 버튼 스타일 제거 */
+            border: 1px solid #ddd;
+            background-color: white;
+            color: #333;
         }
 
         .link-box:hover {
@@ -93,25 +105,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%; /* 부모 박스 크기만큼 확장 */
+            width: 100%; 
             gap: 15px;
         }
 
         .owner-photo {
-            width: 35px; /* 이미지 크기 축소 */
-            height: 35px; /* 이미지 크기 축소 */
+            width: 35px; 
+            height: 35px; 
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #004d99;
+            /* 박스 높이에 영향을 주지 않도록 마진 제거 */
+            margin: 0; 
+            padding: 0;
         }
 
-        /* 기타 SNS 박스 (버튼 태그)의 텍스트를 A 태그의 텍스트와 동일하게 처리 */
-        .link-box.link-button .link-title {
-            line-height: 1; /* 높이 맞춤 보정 */
-        }
-
-        /* 푸터 (요청에 따라 삭제) */
-        
         /* 모달 스타일 (변경 없음) */
         .modal {
             display: none; 
@@ -204,9 +212,9 @@
             <h2 class="link-title">학원 SNS 안내</h2>
         </a>
 
-        <button id="openModalBtn" class="link-box link-button">
+        <a href="#" id="openModalBtn" class="link-box">
             <h2 class="link-title">기타 SNS 안내</h2>
-        </button>
+        </a>
     </main>
 
     <div id="snsModal" class="modal">
@@ -227,7 +235,9 @@
         const btn = document.getElementById('openModalBtn');
         const span = document.getElementsByClassName('close-btn')[0];
 
-        btn.onclick = function() {
+        // 기타 SNS 안내 버튼(A 태그) 클릭 시
+        btn.onclick = function(event) {
+          event.preventDefault(); // A 태그의 기본 동작(페이지 이동) 방지
           modal.style.display = "block";
         }
 
