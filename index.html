@@ -29,19 +29,19 @@
             margin: 0;
             font-size: 1.8em;
             font-weight: 700;
-            /* 요청 1: (FOST English)가 같은 줄에 보이도록 수정 */
-            white-space: nowrap; 
         }
         
-        /* 요청 1: (FOST English)를 한 줄로 표시하기 위해 h1 내부 span 추가 */
+        /* 요청 1 반영: FOST English 부분 스타일 */
         .header h1 span {
-            font-size: 0.8em; /* 영어 부분은 약간 작게 */
+            display: block; /* 줄 바꿈 강제 */
+            font-size: 0.8em; 
             font-weight: 500;
+            margin-top: 5px;
         }
 
 
         .slogan {
-            margin-top: 5px;
+            margin-top: 10px; /* 제목과 슬로건 간격 조정 */
             font-size: 1em;
             font-weight: 300;
             opacity: 0.9;
@@ -56,8 +56,8 @@
 
         /* 링크 박스 공통 스타일 */
         .link-box {
-            display: block; /* 블록 요소로 전체 영역 클릭 가능하게 */
-            text-decoration: none; /* 링크 밑줄 제거 */
+            display: block; 
+            text-decoration: none; 
             color: #333;
             background-color: white;
             padding: 15px 20px;
@@ -71,7 +71,7 @@
         }
 
         .link-box:hover {
-            transform: translateY(-3px); /* 마우스 오버 시 살짝 떠오르는 효과 */
+            transform: translateY(-3px); 
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -82,24 +82,22 @@
             color: #004d99; /* 파란색 제목 */
         }
         
-        /* 요청 2: 원장 소개 글자 밑줄 제거 */
+        /* 원장 소개 글자 밑줄 제거 */
         .owner-intro-content a.link-title {
             text-decoration: none;
         }
 
-        /* 버튼 스타일 (기타 SNS 안내) - 폰트 크기 통일 위해 조정 */
+        /* 버튼 스타일 (기타 SNS 안내) - 요청 2 반영: 폰트 크기 통일 */
         .link-button {
             width: 100%;
             border: none;
             cursor: pointer;
-            /* 요청 3: 기타 SNS 안내 글자 크기를 다른 박스와 동일하게 */
             padding: 15px 20px; 
             box-sizing: border-box; 
         }
         
         .link-button .link-title {
-            /* 기타 SNS 안내의 h2 폰트 크기 유지 */
-            font-size: 1.2em; 
+            font-size: 1.2em; /* 기타 SNS 안내의 h2 폰트 크기 통일 */
         }
 
         /* 원장 소개 박스 전용 스타일 */
@@ -119,7 +117,7 @@
         }
 
         .owner-intro-content .link-title {
-            font-size: 1.2em; /* 원장 소개 글자는 이제 다른 링크와 동일하게 */
+            font-size: 1.2em; 
         }
 
         /* 푸터 스타일 */
@@ -207,7 +205,10 @@
 <body>
 
     <header class="header">
-        <h1>포스트잉글리쉬 <span style="font-size: 0.8em; font-weight: 500;">(FOST English)</span></h1>
+        <h1>
+            포스트잉글리쉬 
+            <span>(FOST English)</span>
+        </h1>
         <p class="slogan">AI를 활용한 창의적 미래 인재 양성</p>
     </header>
 
