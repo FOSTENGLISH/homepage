@@ -45,6 +45,21 @@
             opacity: 0.9;
         }
 
+        .slogan span {
+    display: block;          /* 줄바꿈 */
+      }
+
+    .slogan-main {
+    font-size: 1.05em;
+    font-weight: 400;
+    }
+
+    .slogan-sub {
+    font-size: 0.9em;
+    margin-top: 4px;         /* 위아래 간격 */
+    opacity: 0.85;
+    }
+        
         /* 메인 콘텐츠 */
         .container {
             max-width: 600px;
@@ -189,7 +204,11 @@
             포스트잉글리쉬 
             <span>(FOST English)</span>
         </h1>
-        <p class="slogan">AI를 활용한 창의적 미래 인재 양성!2025년 원장 특허출원!</p>
+        <p class="slogan">
+        <span class="slogan-main">AI를 활용한 창의적 미래 인재 양성!</span>
+        <span class="slogan-sub">2025년 원장 특허출원!</span>
+        </p>
+        
     </header>
 
     <main class="container">
